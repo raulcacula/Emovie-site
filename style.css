@@ -1,0 +1,865 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+   /*background: linear-gradient(to bottom , black  80%, #191970 );*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow-x: hidden !important;
+    background: black;
+} 
+h1{
+    font-family: 'Bebas Neue', sans-serif;   
+}
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50%);
+    transition: all 0.5s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0px);
+    transition: all 0.5s;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 32px;
+}
+nav{
+    justify-content: space-evenly;
+    display: flex;
+}
+#container-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+ul{
+    list-style: none;
+}
+#container-items a{
+    text-decoration: none;
+    font-family: 'poppins';
+    font-weight: 800;
+    color:white;
+}
+.logo h2{
+    font-family: sans-serif;
+    letter-spacing: 4;
+    font-size: 30px;
+    color: white;
+}
+.logo span{
+    color: dodgerblue;
+    font-family: 'Bebas Neue', sans-serif;   
+}
+.back-inicio{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://i.pinimg.com/originals/49/da/7d/49da7d8efab607e46a080cc5356509ea.jpg);
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.filme-inicio{
+    padding:50px 15% 80px ;
+    justify-content: center;
+    align-items: center;
+}
+.img-inicio{
+    line-height: 3;
+ width: 300px;
+ height: 100%;
+}
+.img-inicio img{
+    width: 100%;
+}
+.sobre-inicio{
+    color: white;
+}
+.sobre-inicio span1{
+    background: yellow;
+    padding: 0.3rem;
+    border-radius: 5px;
+    color: red;
+}
+.sobre-inicio p{
+    color: white;
+    margin-top: 20px;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: 'poppins';
+    font-weight: 800;
+}
+.sobre-inicio a{
+    color: white;
+    line-height: 4;
+    background:dodgerblue;
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.sobre-inicio a:hover{
+    color: dodgerblue;
+    background: white;
+}
+#criar-a{
+    background: dodgerblue;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 1s ;
+}
+#plano-a{
+    position: relative;
+
+}
+#plano-a::after{
+    content: " ";
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: white;
+
+    transition: .2s ease-in-out;
+}
+#plano-a:hover::after{
+    width: 100%;
+}
+#criar-a:hover{
+    background: linear-gradient(to left , dodgerblue , black);
+}
+@media screen and (min-width:200px) and (max-width:870px){
+    .back-inicio{
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://i.pinimg.com/originals/49/da/7d/49da7d8efab607e46a080cc5356509ea.jpg);
+        height: 70vh !important;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .filme-inicio{
+        padding:0px 10% 80px ;
+        justify-content: center;
+        align-items: center;
+    }
+    .sobre-inicio p{
+        color: white;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1.5em;
+        font-family: 'poppins';
+        font-weight: 800;
+    }
+    .img-inicio img{
+        width: 70%;
+    }
+}
+.container-john{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.card{
+    width: 250px;
+    height: 500px;
+    display: flex ;
+    align-items: end;
+    border: 5px solid white;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+
+}
+.card-content{
+    padding: 1rem;
+    padding-top: 2rem;
+    height: fit-content;
+    width: 100%;
+    background: linear-gradient(
+        0deg,
+        rgb(0,0,0) 0%,
+        rgb(0,0,0) 50%,
+        rgba(0,0,0,0) 100%
+    );
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+@keyframes card-content{
+    0%{
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.card:hover .card-content{
+    animation: card-content 500ms ease-in forwards;
+}
+.card-content p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    line-height: 2;
+    font-family: 'poppins';
+}
+.card-content a{
+    color: white;
+    font-weight: 800;
+    font-family: 'poppins';
+    text-decoration: none;
+}
+.card-content a:hover{
+    color: dodgerblue;
+}
+#john{
+    background-image: url(https://cinepop.com.br/wp-content/uploads/2022/04/poltrona-John-Wick-keanu.jpg);
+}
+#john2{
+    background-image: url(https://images-na.ssl-images-amazon.com/images/S/pv-target-images/4d84337604635f48a46a7df9b6dc2861de642447211b6c10999ff6eb74f1401d._RI_TTW_.jpg);
+}
+#john3{
+    background-image: url(https://musicart.xboxlive.com/7/261e5100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080);
+}
+@media(max-width:1000px){
+    .container-john{
+        flex-direction: column;
+    }
+    .card{
+        width: 400px;
+        height: 500px;
+        display: flex ;
+        align-items: end;
+        border: 5px solid white;
+        border-radius: 8px;
+        background-size: cover;
+        margin-left:-0px;
+        background-position: center;
+    }
+}
+@media (min-width:200px) and (max-width:600px){
+    .container-john{
+        flex-direction: column;
+    }
+    .card{
+        width: 250px;
+        height: 500px;
+        display: flex ;
+        align-items: end;
+        border: 5px solid white;
+        border-radius: 8px;
+        margin-left: 0px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+.titulo-john{
+    color:dodgerblue;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.titulo-filmes{
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+}
+
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+    margin-top: -100px;
+}
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+.slider-content input{
+    display: none;
+}
+.slide-box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+.slide-box img{
+    width: 70%;
+}
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 30%;
+    display: flex;
+    justify-content: center;
+}
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nav-manual .manual-btn:not(:last-child) ,.nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+.nav-manual .manual-btn:hover{
+    background-color: white;
+}
+#radio1:checked ~ .nav-auto .auto-btn1{
+    background-color: dodgerblue;
+}
+#radio2:checked ~ .nav-auto .auto-btn2{
+    background-color: dodgerblue;
+}
+#radio3:checked ~ .nav-auto .auto-btn3{
+    background-color: dodgerblue;
+}
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+.data p{
+    font-size: 15px;
+  color: white;
+  font-weight: 800;
+  font-family: 'poppins';
+  text-align:right;
+  margin-right: 70px;
+
+}
+.filmes-4k{
+    justify-content: center;
+    align-items: center;
+    padding:90px 15% 80px ;
+    display: flex;
+    gap: 1rem;
+}
+.texto-4k{
+    color: white;
+
+    text-align: left;
+}
+.texto-4k h1{
+    color: dodgerblue;
+    font-size: min(40px,5vw);
+    font-family: 'Bebas Neue', sans-serif;   
+}
+.texto-4k p{
+    font-family: 'poppins';
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.img-4k img{
+    width: 100% 
+}
+@media screen  and (max-width:800px){
+    .filmes-4k{
+        flex-direction: column;
+        width: 100%;
+    }
+    .texto-4k{
+        text-align: center;
+    }
+}
+
+/* PLANO */
+
+.background-plano{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://1.bp.blogspot.com/-FQzCYlILEA8/X9qNcgzIg3I/AAAAAAAAzHU/DNACDpdYx1U_STX1iAShk_dUVZitUofhwCLcBGAsYHQ/s1280/lancamentos-da-netflix-filmes-2021-janeiro.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    scroll-behavior: auto;
+    height:80vh;
+    scroll-snap-type:  y mandatory;
+}
+
+.plano-emovies{
+    padding: 20px 15%  80px;
+    scroll-snap-align: start;
+    position: sticky;
+}
+.plano-titulo{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+main.planos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:3rem;
+    margin-top: 50px;
+}
+.card-plano{
+     line-height: 2;
+     background: gainsboro;
+     padding: 2rem;
+     border-radius: 8px;
+    
+}
+.card-plano h1{
+    letter-spacing: 2px;
+    font-size: 40px;
+    color: dodgerblue;
+}
+
+.card-plano p{
+    color: black;
+    font-family: 'poppins';
+    font-weight: 700;
+    font-size: 20px;
+}
+.card-plano span{
+ 
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.card-plano a{
+    text-decoration: none;
+    font-family: 'poppins';
+    font-weight: 900;
+    background: dodgerblue;
+    padding: 1rem;
+    line-height: 5;
+    color: white;
+    text-transform: lowercase;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+}
+.card-plano a:hover{
+    background: white;
+    color: dodgerblue;
+}
+.card-plano2 h1{
+    color: black;
+}
+.card-plano2 p{
+    color: dodgerblue;
+}
+.card-plano2 a{
+    background: black;
+    color:dodgerblue;
+    transition: 0.5s ease-in-out;
+}
+.card-plano2 a:hover{
+    background: dodgerblue;
+    color: black;
+}
+
+@media(max-width:700px){
+    .background-plano{
+        background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.7)), url(https://1.bp.blogspot.com/-FQzCYlILEA8/X9qNcgzIg3I/AAAAAAAAzHU/DNACDpdYx1U_STX1iAShk_dUVZitUofhwCLcBGAsYHQ/s1280/lancamentos-da-netflix-filmes-2021-janeiro.png);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        scroll-behavior: auto;
+        height: 170vh !important;
+        scroll-snap-type:  y mandatory;
+    }
+    main.planos{
+        flex-direction: column;
+        margin-left: -0px;
+    }
+    main.planos:first-child{
+        margin-left: 0;
+    }
+    .plano-emovies{
+        flex-direction: column;
+    }
+    .plano-titulo{
+        margin-top: 0px;
+        margin-left: 10px;
+    }
+}
+
+
+
+.titulo-grid{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.grid-filmes{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin-top: 100px;
+    margin-left: -50px;
+}
+
+.grid-imgs{
+    display: flex;
+    gap: 2rem;
+    margin-left: 0px;
+}
+.grid-imgs img{
+    border-radius: 8px;
+    border-color: blueviolet;
+    border-style: solid;
+    height: 80vh;
+    max-width: 250px;
+}
+.ft2{
+    margin-top: 20px;
+}
+@media screen and (min-width:700px) and (max-width:900px){
+    .grid-imgs img{
+        border-radius: 8px;
+        border-color: blueviolet;
+        border-style: solid;
+        height: 60vh;
+        max-width: 200px;
+    }
+    .grid-imgs{
+        margin-left: 50px;
+    }
+}
+@media(max-width:699px){
+    .titulo-grid{
+        text-align: center;
+        margin-left: -0px;
+    }
+    .grid-filmes{
+        flex-direction: column;
+    }
+    .grid-imgs{
+        margin-left: 50px;
+    }
+    .grid-imgs img{
+        border-radius: 8px;
+        border-color: blueviolet;
+        border-style: solid;
+        height: 40vh;
+        max-width: 200px;
+    }
+}
+@media screen and (min-width:200px) and (max-width:500px){
+    .grid-filmes{
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .grid-imgs{
+        flex-direction: column;
+        margin-left: 50px;
+    }
+    .grid-imgs img{
+        border-radius: 8px;
+        border-color: blueviolet;
+        border-style: solid;
+        height: 60vh;
+        max-width: 400px;
+    }
+}
+
+section.conta{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.conta-em{ 
+    flex-direction: column;
+}
+.titulo-form span{
+    color: transparent;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;   
+}
+.titulo-form span::after{
+    content: " ";
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -20px;
+}
+.titulo-form h1{
+    line-height: 2;
+    color: white;
+    font-size: 40px;
+}
+
+form{
+    flex-direction: column;
+    margin-top:50px;
+}
+#email{
+    width: 350px;
+    text-indent: 5px;
+    height: 50px;
+    background: transparent;
+    color: dodgerblue;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+#btn{
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    background: dodgerblue;
+    color: white;
+    user-select: contain;
+    cursor:pointer;
+}
+form p{
+    line-height: 3;
+    font-size: 15px;
+    font-family: 'poppins';
+    font-weight: 800;
+    color: red;
+    display: none;
+    animation:colors 1s ease forwards;
+}
+@keyframes colors{
+    0%{
+        color: black;
+    }
+    100%{
+        color: red;
+    }
+}
+#check{
+    color: red;
+    display: none;
+}
+@keyframes colors2{
+    0%{
+        color: black;
+
+    }
+    100%{
+        color: greenyellow;
+        transform: translateY(-20px);
+    }
+}
+#check i{
+    color: greenyellow;
+    font-size: 70px;
+    line-height: 2;
+    animation:colors2 1s ease forwards;
+}
+#check h1{
+    color: white;
+    font-size: 30px;
+    animation:colors3 1s ease forwards;
+}
+@keyframes colors3{
+    0%{
+        color: black;
+    }
+    100%{
+        color: white;
+        transform: translateY(-20px);
+    }
+}
+@media(max-width:400px){
+    #email{
+        width: 300px;
+        text-indent: 5px;
+        height: 50px;
+        background: transparent;
+        color: dodgerblue;
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+    #btn{
+        width: 300px;
+        height: 40px;
+        margin-top: 20px;
+        background: dodgerblue;
+        color: white;
+        user-select: contain;
+        cursor:pointer;
+    }
+}
+section.perguntas{
+    padding: 50px 15% 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.titulo-pergunta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    line-height: 4;
+    color: dodgerblue;
+    font-size: 20px;
+}
+.pergunta1{
+    color: white;
+}
+.pergunta1 h1{
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 30px;
+}
+.pergunta1 i{
+    animation: arrow 1s ease-out infinite;
+    font-size: 25px;
+    margin-top: -5px;
+}
+@keyframes arrow{
+    0%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(-0px);
+    }
+    100%{
+        transform: translateY(-2px);
+    }
+}
+.pergunta1 p{
+    font-family: 'poppins';
+    font-weight: 700;
+    font-size: 30px;
+    animation:  colors3 .5s ease forwards;
+}
+@keyframes colors3{
+    0%{
+        color: black;
+    }
+    100%{
+        color: white;
+    }
+}
+#respo1{
+    display: none;
+}
+.pergunta2{
+    color: white;
+    margin-top: 100px;
+}
+.pergunta2 h1{
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 28px;
+}
+.pergunta2 p{
+    display: none;
+    font-family: 'poppins';
+    font-weight: 700;
+    font-size: 30px;
+    animation:  colors3 .5s ease forwards;
+}
+footer{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 60px;
+    padding: 1rem;
+}
+.footer-titulo h2{
+    font-family: sans-serif;
+    letter-spacing: 4;
+    font-size: 40px;
+}
+.footer-titulo span{
+    color: dodgerblue;
+    font-family: 'Bebas Neue', sans-serif;   
+}
+.footer-link{
+    line-height: 4;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-link a{
+    color: white;
+    text-decoration: none;
+    font-family: 'poppins';
+    transition: 0.5s ease;
+    font-size: 18px;
+}
+.footer-link a:hover{
+    font-weight: 800;
+    text-decoration: underline;
+}
+.sociais{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 20px;
+}
+.sociais p{
+    font-size: 20px;
+    color: grey;
+}
+.sociais i{
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.sociais i:hover{
+    color: dodgerblue;
+}
+@media(max-width:400px){
+    .footer-link{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .sociais{
+        gap: 4rem;
+    }
+}
